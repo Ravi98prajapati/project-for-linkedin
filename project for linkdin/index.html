@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project- Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+<nav>
+    <img src="login-reg-img/logo.png" alt="##" class="logo  triangle-img">
+    <h1 class="text-block">RaVi</h1>
+    <ul>
+        <li> <a href="">HOME</a></li>
+        <li> <a href="">ABOUT</a></li>
+        <li> <a href="">Portfolio</a></li>
+        <li> <a href="">SERVICES</a></li>
+        <li> <a href="">HIRE ME</a></li>
+    </ul>
+    <img src="dark theme icon/moon.png" alt="###" id="icon">
+</nav>
+
+<div class="info">
+    <h2>I'm <span> Ravi </span> Prajapati</h2>
+    <p>This is my official Portfolio Website to showcase my all works related to <br> web development and UI design.</p>
+    <a href="resume.html" target="_blank">Download CV</a>
+</div>
+
+<div class="img-box">
+    <img src="login-reg-img/back-img.jpg.jpg" alt="" class="back-img">
+    <img src="login-reg-img/myphoto.jpeg" alt="" class="main-img">
+</div>
+<div class="social-links">
+    <a href=""> <i class="fab fa-linkedin"></i></a>
+    <a href=""> <i class="fab fa-behance"></i></a>
+    <a href=""> <i class="fab fa-instagram"></i></a>
+</div>
+    </div>
+
+    <script>
+
+        var icon = document.getElementById("icon");
+
+        if(localStorage.getItem("theme")== null){
+            localStorage.setItem("theme","light");
+        }
+
+        
+        let localData = localStorage.getItem("theme");
+
+        if(localData=="light"){
+            icon.src = "dark theme icon/moon.png";
+            document.body.classList.remove("dark-theme");
+        } else if(localData == "dark"){
+            icon.src = "dark theme icon/sun.png";
+            document.body.classList.add("dark-theme");
+        }
+
+
+        icon.onclick = function(){
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                icon.src = "dark theme icon/sun.png";
+                localStorage.setItem("theme","dark");
+            }else{
+                icon.src = "dark theme icon/moon.png";
+                localStorage.setItem("theme","light");
+            }
+        }
+    </script>
+</body>
+
+</html>
